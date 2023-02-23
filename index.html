@@ -2,6 +2,7 @@
 <html>
   <head>
     <script src="https://pixijs.download/release/pixi.js"></script>
+
   </head>
   <body>
     <script>
@@ -24,18 +25,26 @@
         app.stage.addChild(kyrie)
 
 
-        //mouse work now!
-        app.stage.interactive = true;
-        app.stage.on("pointermove", moveKyrie);
-
-        function moveKyrie(e){
-            let pos = e.data.global;
-             
-
-            kyrie.x= pos.x;
-            kyrie.y= pos.y;A
-        }
+        //mouse work now!   
+            kyrie.y= pos.y;
         
+
+        //keyboard actions
+        window.addEventListener("keydown", keysDown);
+        window.addEventListener("keyup", keysUp);
+
+        let keys ={}
+
+        function keysDown(e){
+            console.log(e.keyCode);
+            keys[e.keyCode]= true;
+
+        }
+        function keysUp(e){
+            console.log(e.keyCode);
+            keys[e.keyCode]= false; 
+
+        }
      
 //              // Add a variable to count up the seconds our demo has been running
 //         let elapsed = 0.0;
@@ -52,6 +61,14 @@
 
       </script>
 
-      <!-- <h1>Hello world</h1> -->
+      <div id="keys">
+        
+
+      </div>
+
+
+ 
+
+      
   </body>
 </html>

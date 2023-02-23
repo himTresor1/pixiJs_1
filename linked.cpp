@@ -21,6 +21,10 @@ Node* deleteFirstNode() {
         delete temp;
     }
 
+Node* deleteLastNode(Node *hea){
+    N
+}
+
 bool search(Node *head, int x)
 {
     while(head != NULL){
@@ -55,7 +59,14 @@ int main()
     n3->next = n4;
     n4->next = n5;
 
-    cout << head->next->next->next->next->data;
+
+
+    cout<<n1->next->next->next->next->data<<endl;
+    cout<<n1->next->next->next->data<<endl;
+    cout<<n1->next->next->data<<endl;
+    cout<<n1->next->data<<endl;
+
+
     if(search(n1,8)){
         cout << "Element found!!" << endl;
     }else{
