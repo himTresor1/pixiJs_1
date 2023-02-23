@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://pixijs.download/release/pixi.js"></script>
+  </head>
+  <body>
+    <script>
+        let app = new PIXI.Application(
+            {
+             width: 1920,
+            height: 1080,
+            backgroundColor: 0xAAAAAA 
+         
+            }
+            );
+
+            // the code for creating the main object !!!
+        document.body.appendChild(app.view);
+        let kyrie= PIXI.Sprite.from('sample.png');
+        kyrie.anchor.set(0.5);                                                                                                                                                                                                                                                                                                      
+        kyrie.x = app.view.width/2;
+        kyrie.y= app.view.height/2;
+        
+        app.stage.addChild(kyrie)
+
+
+        //mouse work now!
+        app.stage.interactive = true;
+        app.stage.on("pointermove", moveKyrie);
+
+        function moveKyrie(e){
+            let pos = e.data.global;
+             
+
+            kyrie.x= pos.x;
+            kyrie.y= pos.y;A
+        }
+        
+     
+//              // Add a variable to count up the seconds our demo has been running
+//         let elapsed = 0.0;
+//   // Tell our application's ticker to run a new callback every frame, passing
+//   // in the amount of time that has passed since the last tick
+//         app.ticker.add((delta) => {
+//     // Add the time to our total elapsed time
+//         elapsed += delta;
+    // Update the kyrie's X position based on the cosine of our elapsed time.  We divide
+    // by 50 to slow the animation down a bit...
+       
+//   });
+
+
+      </script>
+
+      <!-- <h1>Hello world</h1> -->
+  </body>
+</html>
